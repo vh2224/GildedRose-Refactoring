@@ -1,11 +1,11 @@
-class GildedRose(object):
+from .itemName import Item
+from .items import ItemEnum
 
-    def __init__(self, items):
-        self.items = items
+class GildedRose(object):
 
     def update_quality(self):
         for item in self.items:
-            if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert":
+            if item.name != ItemEnum.AGED_BRIE.value and item.name != ItemEnum.BACKSTAGE.value:
                 if item.quality > 0:
                     if item.name != "Sulfuras, Hand of Ragnaros":
                         item.quality = item.quality - 1
